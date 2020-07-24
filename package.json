@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "deploy": "now -prod",
+    "dev": "webpack-dev-server",
     "build": "webpack -p",
-    "dev": "webpack-dev-server"
+    "test": "jest",
+    "deploy": "now -prod"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
