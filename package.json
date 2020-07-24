@@ -9,11 +9,6 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test"
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
@@ -40,6 +35,7 @@
     "eslint-plugin-react-hooks": "2.5.1",
     "html-webpack-plugin": "^4.0.3",
     "husky": "^4.2.5",
+    "jest": "^26.1.0",
     "prettier": "2.0.2",
     "prettier-eslint": "9.0.1",
     "prettier-eslint-cli": "5.0.0",
@@ -58,5 +54,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
+  }
 }
