@@ -26,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     --red:#D62828;
     --yellow:#FCBF49;
     --lemon:#EAE2B7;
+    --gray:#cac9c8;
   }
   li{
     list-style: none;
