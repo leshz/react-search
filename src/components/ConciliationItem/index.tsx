@@ -12,6 +12,7 @@ export const ConciliationItem: React.FC<ConciliationItemProps> = ({
   sourceB,
   description,
   tags,
+  timestamp,
 }) => {
   let tagsAsString = tags.join(" , ");
   const active = useActiveClick();
@@ -56,6 +57,22 @@ export const ConciliationItem: React.FC<ConciliationItemProps> = ({
           description:
           <span>
             {reactStringReplace(description, selected, (match, i) => (
+              <Match key={i}>{match}</Match>
+            ))}
+          </span>
+        </p>
+        <p>
+          create at:
+          <span>
+            {reactStringReplace(timestamp.createdAt, selected, (match, i) => (
+              <Match key={i}>{match}</Match>
+            ))}
+          </span>
+        </p>
+        <p>
+          update at:
+          <span>
+            {reactStringReplace(timestamp.updateAt, selected, (match, i) => (
               <Match key={i}>{match}</Match>
             ))}
           </span>

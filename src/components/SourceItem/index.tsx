@@ -10,6 +10,7 @@ export const SourceItem: React.FC<SourceItemProps> = ({
   tags,
   selected,
   description,
+  timestamp,
 }) => {
   let tagsAsString = tags.join(" , ");
   const active = useActiveClick();
@@ -36,6 +37,22 @@ export const SourceItem: React.FC<SourceItemProps> = ({
           description:
           <span>
             {reactStringReplace(description, selected, (match, i) => (
+              <Match key={i}>{match}</Match>
+            ))}
+          </span>
+        </p>
+        <p>
+          create at:
+          <span>
+            {reactStringReplace(timestamp.createdAt, selected, (match, i) => (
+              <Match key={i}>{match}</Match>
+            ))}
+          </span>
+        </p>
+        <p>
+          update at:
+          <span>
+            {reactStringReplace(timestamp.updateAt, selected, (match, i) => (
               <Match key={i}>{match}</Match>
             ))}
           </span>

@@ -81,3 +81,9 @@ export const Description = styled.p`
   color: var(--black);
   opacity: 0.8;
 `;
+
+export const Errors = styled(Description)`
+  margin: 5px 0;
+  color: var(--red);
+  width: 100%;
+`;

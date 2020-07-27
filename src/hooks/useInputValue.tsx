@@ -14,6 +14,7 @@ export const useInputValue = (initialValue = "") => {
   const isValidInput = (input: string, type: number): void => {
     const validateText = /^[a-zA-Z]/g;
     const validateNumber = /^[0-9]*$/g;
+    const validateDate = /(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/g;
     let isValid = false;
     switch (type) {
       case 0:
@@ -22,6 +23,8 @@ export const useInputValue = (initialValue = "") => {
       case 1:
         isValid = !validateNumber.test(input);
         break;
+      case 2:
+        isValid = !validateDate.test(input);
     }
     setError(isValid);
   };

@@ -6,6 +6,7 @@ import {
   InputWrap,
   ButtonInput,
   Description,
+  Errors,
 } from "./style";
 import { useInputValue } from "../../hooks/useInputValue";
 import { FiType, FiCalendar, FiPercent } from "react-icons/fi";
@@ -29,18 +30,18 @@ export const Search: React.FC<PropsSearch> = ({ submit, description = "" }) => {
     }
   };
   const handlerClick = (type: number) => {
-    isValidInput(value, type);
+    if (value !== "") isValidInput(value, type);
     setSelector(type);
   };
 
   const getMessageFromType = (type: number) => {
     switch (type) {
       case 0:
-        return "Buscar por textos";
+        return "Busqueda por texto";
       case 1:
-        return "Buscar por números";
+        return "Busqueda por números";
       case 2:
-        return "Buscar por fechas";
+        return "Busqueda por fechas yyyy-mm-dd";
       default:
         return "";
     }
@@ -51,6 +52,7 @@ export const Search: React.FC<PropsSearch> = ({ submit, description = "" }) => {
 
   return (
     <FormSearch onSubmit={submitForm}>
+      {isError && <Errors>Error en el formato de entrada</Errors>}
       <InputWrap className={`${isError ? "error" : ""}`}>
         <Input
           type="text"
@@ -81,6 +83,7 @@ export const Search: React.FC<PropsSearch> = ({ submit, description = "" }) => {
         </ButtonInput>
         <Button type="submit">Buscar</Button>
       </InputWrap>
+
       <Description>{description}</Description>
     </FormSearch>
   );

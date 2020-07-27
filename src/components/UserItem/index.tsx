@@ -15,6 +15,7 @@ export const UserItem: React.FC<UserItemProps> = ({
   age,
   phone,
   address,
+  createdAt,
 }) => {
   let tagsAsString = tags.join(" , ");
   const active = useActiveClick();
@@ -77,6 +78,14 @@ export const UserItem: React.FC<UserItemProps> = ({
           address:
           <span>
             {reactStringReplace(address, selected, (match, i) => (
+              <Match key={i}>{match}</Match>
+            ))}
+          </span>
+        </p>
+        <p>
+          Create at:
+          <span>
+            {reactStringReplace(createdAt, selected, (match, i) => (
               <Match key={i}>{match}</Match>
             ))}
           </span>

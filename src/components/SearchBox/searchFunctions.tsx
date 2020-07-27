@@ -57,5 +57,24 @@ export const searchByDates = (
 ): boolean => {
   let find = false;
   let index = 0;
+  while (!find && index < searchProps.length) {
+    if (item.hasOwnProperty(searchProps[index])) {
+      let dataValue = item[searchProps[index]];
+      const toCompare = value.toLowerCase();
+      const typeOfVarible = Object.prototype.toString.call(dataValue);
+      debugger;
+      if (typeOfVarible === "[object String]") {
+        find = dataValue === toCompare;
+      }
+      if (
+        typeOfVarible === "[object object]" ||
+        typeOfVarible === "[object Object]"
+      ) {
+        find =
+          dataValue.createdAt === toCompare || dataValue.updateAt === toCompare;
+      }
+    }
+    index++;
+  }
   return find;
 };

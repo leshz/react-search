@@ -11,13 +11,13 @@ export const BoardItem: React.FC<BoardItemProps> = ({
   description,
   visuals,
   tags,
+  timestamp,
 }) => {
   const active = useActiveClick();
   const tagsAsString = tags.join(" , ");
   const visualToString = visuals.join(" , ");
   let visualTypeToString = visualType.map((item) => item.name);
   const types = visualTypeToString.join(" , ");
-  console.log(visualTypeToString);
   return (
     <Item>
       <Head
@@ -33,6 +33,22 @@ export const BoardItem: React.FC<BoardItemProps> = ({
           visualType:
           <span>
             {reactStringReplace(types, selected, (match, i) => (
+              <Match key={i}>{match}</Match>
+            ))}
+          </span>
+        </p>
+        <p>
+          create at:
+          <span>
+            {reactStringReplace(timestamp.createdAt, selected, (match, i) => (
+              <Match key={i}>{match}</Match>
+            ))}
+          </span>
+        </p>
+        <p>
+          update at:
+          <span>
+            {reactStringReplace(timestamp.updateAt, selected, (match, i) => (
               <Match key={i}>{match}</Match>
             ))}
           </span>

@@ -5,7 +5,7 @@ import { UserItem } from "../UserItem";
 import { BoardItem } from "../BoardItem";
 import { SourceItem } from "../SourceItem";
 import { searchBoxProps, submitData } from "../../interfaces";
-import { searchByText, searchByNumber } from "./searchFunctions";
+import { searchByText, searchByNumber, searchByDates } from "./searchFunctions";
 
 const searchText = [
   "conciliationName",
@@ -25,6 +25,8 @@ const searchText = [
 ];
 const searchDataNumber = ["balance", "index", "age", "phone"];
 
+const searchDataDates = ["timestamp", "createdAt"];
+
 const Components = [ConciliationItem, SourceItem, BoardItem, UserItem];
 
 const searchByType = (information = [], search: submitData) => {
@@ -40,6 +42,11 @@ const searchByType = (information = [], search: submitData) => {
       case 1:
         filted = information.filter((item) =>
           searchByNumber(item, value, searchDataNumber)
+        );
+        break;
+      case 2:
+        filted = information.filter((item) =>
+          searchByDates(item, value, searchDataDates)
         );
         break;
 
