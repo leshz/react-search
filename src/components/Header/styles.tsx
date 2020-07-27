@@ -10,6 +10,7 @@ const Header = styled.header`
 
   & h1 {
     color: var(--white);
+    text-transform: capitalize;
   }
 `;
 

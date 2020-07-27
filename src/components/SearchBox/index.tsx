@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box } from "./style";
+import { Box, Title, Content, Result } from "./style";
 import { ConciliationItem } from "../ConciliationItem";
 import { UserItem } from "../UserItem";
 import { BoardItem } from "../BoardItem";
@@ -67,10 +67,15 @@ export const SearchBox: React.FC<searchBoxProps> = ({
   const searchItems = results.map((item) => (
     <CompomentItem {...item} key={item.index} selected={search.value} />
   ));
+
+  const numResults = searchItems.length;
+  if (numResults === 0) return null;
   return (
-    <Box>
-      <h1>{title}</h1>
-      {searchItems}
+    <Box className={`${numResults > 0 ? "visible" : ""}`}>
+      <Title>{title}</Title>
+      <Result>{numResults} resultados</Result>
+      <hr />
+      <Content>{searchItems}</Content>
     </Box>
   );
 };

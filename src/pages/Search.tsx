@@ -28,7 +28,7 @@ export const SearchPage: React.FC = () => {
           type={0}
         ></SearchBox>
         <SearchBox
-          title="fuentes"
+          title="Fuentes"
           data={sources}
           search={searchFor}
           type={1}

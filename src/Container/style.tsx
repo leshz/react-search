@@ -12,5 +12,5 @@ export const ResultsWrapper = styled.div`
   margin: 30px 0;
   position: relative;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
