@@ -30,6 +30,14 @@ La informacion que haga match con la busqueda se muestra en una columna , depend
 
 La aplicacion se encuentra funcionando aqui [LIVE DEMO](https://react-filter.vercel.app)
 
+## Posibles mejoras
+
+- Incluir un nuevo tipo de buscador por expresiones regex
+
+- Tener un datePicker para que al incluir la fecha sea mas sencillo.
+
+- Incluir logica para que el buscador (numero y fechas) no solo buscara por el match exacto , sino tambien por fechas o numero mayores o menores.
+
 ## Cuestionario
 
 ¿Por qué no debería usar la librería ​JQuery,​ ​si estoy usando ​ReactJS​?
