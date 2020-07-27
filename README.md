@@ -1,6 +1,34 @@
 # React Searching Data
 
-React application to search information from external API ( mock )
+Esta aplicacion en react esta diseñada para buscar informacion sobre una extensa lista de datos.
+
+## Buscador
+
+Puedes seleccionar el tipo de datos por el que quieres buscar haciendo click en los iconos
+
+![Texto](./info/buscador.png)
+
+Puedes buscar usando cadenas de texto
+
+![Texto](./info/texto.png)
+
+Tambien buscando sobre datos de numericos
+
+![numero](./info/numero.png)
+
+y tambien fechas en formato **yyyy-mm-dd**
+
+![fecha](./info/fecha.png)
+
+## Resultados
+
+La informacion que haga match con la busqueda se muestra en una columna , dependiendo de la categoria a la que pertenece y quedara resaltada.
+
+![fecha](./info/resultado.png)
+
+## Live DEMO
+
+La aplicacion se encuentra funcionando aqui [LIVE DEMO](https://react-filter.vercel.app)
 
 ## Cuestionario
 

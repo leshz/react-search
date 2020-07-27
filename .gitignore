@@ -192,3 +192,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/react,macos,windows,visualstudiocode,node
 package-lock.json
+
+.vercel
