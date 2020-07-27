@@ -1,4 +1,6 @@
-export const data = [
+import { Usuario } from "../interfaces";
+
+export const data: Usuario[] = [
   {
     _id: "5f0baad061adfe58f1db5876",
     index: 0,

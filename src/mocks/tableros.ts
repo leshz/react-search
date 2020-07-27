@@ -1,4 +1,5 @@
-export const data = [
+import { Tablero } from "../interfaces";
+export const data: Tablero[] = [
   {
     _id: "5f0badf11ea4db1df39532fb",
     index: 0,

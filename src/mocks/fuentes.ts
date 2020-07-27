@@ -1,4 +1,6 @@
-export const data = [
+import { Fuente } from "../interfaces";
+
+export const data: Fuente[] = [
   {
     _id: "5f0baba1913855e14eb69937",
     index: 0,

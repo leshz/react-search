@@ -1,6 +1,9 @@
 import * as React from "react";
 import { Box } from "./style";
 import { ConciliationItem } from "../ConciliationItem";
+import { UserItem } from "../UserItem";
+import { BoardItem } from "../BoardItem";
+import { SourceItem } from "../SourceItem";
 import { searchBoxProps, submitData } from "../../interfaces";
 import { searchByText, searchByNumber } from "./searchFunctions";
 
@@ -10,9 +13,19 @@ const searchText = [
   "sourceB",
   "description",
   "tags",
+  "name",
+  "company",
+  "dashboardName",
+  "visualType",
+  "visuals",
+  "gender",
+  "email",
+  "phone",
+  "address",
 ];
+const searchDataNumber = ["balance", "index", "age", "phone"];
 
-const searchDataNumber = ["balance"];
+const Components = [ConciliationItem, SourceItem, BoardItem, UserItem];
 
 const searchByType = (information = [], search: submitData) => {
   let filted = [];
@@ -41,6 +54,7 @@ export const SearchBox: React.FC<searchBoxProps> = ({
   title,
   search,
   data,
+  type,
 }) => {
   const [results, setResults] = React.useState([]);
   React.useEffect(() => {
@@ -48,8 +62,10 @@ export const SearchBox: React.FC<searchBoxProps> = ({
     setResults(filtered);
   }, [search]);
 
+  const CompomentItem = Components[type];
+
   const searchItems = results.map((item) => (
-    <ConciliationItem {...item} selected={search.value} />
+    <CompomentItem {...item} key={item.index} selected={search.value} />
   ));
   return (
     <Box>

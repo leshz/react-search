@@ -1,5 +1,5 @@
-import { ConsiliationArray } from "../interfaces";
-export const data: ConsiliationArray = [
+import { Conciliacion } from "../interfaces";
+export const data: Conciliacion[] = [
   {
     _id: "5f0bac255aba30b1dfec055e",
     index: 0,
