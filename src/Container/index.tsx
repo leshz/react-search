@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HeaderNav } from "../components/Header";
-import { ContainerWrap } from "./style";
+import { ContainerWrap, ResultsWrapper } from "./style";
 
 export const Container = ({ head = true, children }) => (
   <>
@@ -8,3 +8,7 @@ export const Container = ({ head = true, children }) => (
     <ContainerWrap>{children}</ContainerWrap>
   </>
 );
+
+export const Results = ({ children }) => {
+  return <ResultsWrapper>{children}</ResultsWrapper>;
+};

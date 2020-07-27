@@ -5,7 +5,7 @@ export const useInputValue = (initialValue = "") => {
   const [isError, setError] = React.useState(false);
   const onChange = (e, type = null) => {
     const { value } = e.target;
-    if (type !== null) {
+    if (type !== null && value !== "") {
       isValidInput(value, type);
     }
     setValue(e.target.value);
